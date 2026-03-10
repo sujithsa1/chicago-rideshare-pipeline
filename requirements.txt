@@ -1,0 +1,12 @@
+pandas
+pyarrow
+boto3
+requests
+pyspark
+snowflake-connector-python
+snowflake-sqlalchemy
+dbt-snowflake
+apache-airflow
+streamlit
+plotly
+python-dotenv

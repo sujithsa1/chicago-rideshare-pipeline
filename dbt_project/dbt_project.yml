@@ -1,0 +1,15 @@
+name: chicago_rideshare
+version: '1.0.0'
+profile: chicago_rideshare
+
+model-paths: ["models"]
+test-paths: ["tests"]
+
+models:
+  chicago_rideshare:
+    staging:
+      +materialized: view
+      +schema: STAGING
+    marts:
+      +materialized: table
+      +schema: MARTS
