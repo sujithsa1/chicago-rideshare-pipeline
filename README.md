@@ -16,7 +16,6 @@
 
 > 👉 **[View Live Analytics Dashboard](https://sujithsa1.github.io/chicago-rideshare-pipeline/)**
 
----
 
 ## 📌 Project Overview
 
@@ -59,8 +58,6 @@ A **production-grade, cloud-native data engineering pipeline** built on **real C
 └──────────────────────────────────────────────────────────────────┘
 ```
 
----
-
 ## 🧱 Tech Stack
 
 | Layer | Technology | Purpose |
@@ -74,7 +71,6 @@ A **production-grade, cloud-native data engineering pipeline** built on **real C
 | 🌐 Dashboard | **GitHub Pages** | Live analytics dashboard |
 | 🐍 Language | **Python 3.11** | Core pipeline logic |
 
----
 
 ## 📂 Project Structure
 
@@ -97,8 +93,6 @@ chicago-rideshare-pipeline/
 ├── requirements.txt
 └── README.md
 ```
-
----
 
 ## 🥉🥈🥇 Medallion Architecture
 
@@ -143,13 +137,10 @@ s3://chicago-rideshare-bucket/
     └── agg_community_area.parquet
 ```
 
----
-
 ## ☁️ AWS S3 — All 3 Layers
 
 ![S3 Medallion Layers](screenshots/s3_medallion_layers.png)
 
----
 
 ## ✈️ Apache Airflow — Full Pipeline Orchestration
 
@@ -172,8 +163,6 @@ Total Pipeline Duration: 00:01:14 ⚡
 Run Date: 2026-03-10
 Status: ✅ SUCCESS
 ```
-
----
 
 ## 🔄 dbt Model Lineage
 
@@ -201,8 +190,6 @@ fct_trips ──────────┬──► agg_hourly_demand
 | `agg_daily_trends` | Table | Daily trip trends |
 | `agg_community_area` | Table | Performance by community |
 
----
-
 ## 📊 Live Dashboard
 
 > 👉 **[https://sujithsa1.github.io/chicago-rideshare-pipeline/](https://sujithsa1.github.io/chicago-rideshare-pipeline/)**
@@ -214,8 +201,6 @@ fct_trips ──────────┬──► agg_hourly_demand
 - 📅 Daily trip volume trends
 - 💰 Revenue & fare analytics
 - 🚗 Trip duration distributions
-
----
 
 ## 📈 Key Metrics
 
@@ -238,61 +223,6 @@ fct_trips ──────────┬──► agg_hourly_demand
    dbt Tests:                Passing ✅
 ```
 
----
-
-## 🚀 How to Run
-
-### Prerequisites
-```bash
-Python 3.11+
-AWS Account (S3)
-Snowflake Account
-Apache Airflow
-```
-
-### Setup
-```bash
-git clone https://github.com/sujithsa1/chicago-rideshare-pipeline.git
-cd chicago-rideshare-pipeline
-
-python3.11 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-### Configure credentials
-```bash
-aws configure
-# Add Snowflake credentials to .env
-```
-
-### Run Pipeline
-```bash
-# Option 1: Run manually step by step
-python3 ingestion/download_data.py
-python3 transformations/bronze_to_silver.py
-python3 transformations/silver_to_gold.py
-
-# dbt
-cd dbt_project
-dbt run
-dbt test
-
-# Option 2: Trigger via Airflow
-airflow standalone
-# Open localhost:8080
-# Trigger: chicago_rideshare_pipeline
-```
-
-### Generate Dashboard
-```bash
-python3 generate_html_dashboard.py
-# Opens at docs/index.html
-# Live at: https://sujithsa1.github.io/chicago-rideshare-pipeline/
-```
-
----
-
 ## ✅ Data Quality
 
 | Check | Rule | Result |
@@ -306,35 +236,7 @@ python3 generate_html_dashboard.py
 
 **Data Quality Rate: 99.6%** (498,071 / 500,000)
 
----
-
-## 💼 Resume Summary
-
-```
-Project: Chicago Rideshare Analytics Pipeline
-Stack:   Python · AWS S3 · Snowflake · dbt · Apache Airflow · GitHub Pages
-
-• Built production-grade data pipeline processing 500,000+ real Chicago
-  rideshare records through Medallion Architecture (Bronze/Silver/Gold) on AWS S3.
-
-• Achieved 99.6% data quality rate by implementing validation checks that
-  identified and removed 1,929 invalid records during Silver transformation.
-
-• Orchestrated 7-task Airflow DAG completing full pipeline in under 2 minutes,
-  covering ingestion, quality checks, transformation, Snowflake loading, and dbt.
-
-• Modeled data with dbt across 5 models (staging, facts, 3 aggregation marts)
-  with automated test suite for data integrity validation.
-
-• Deployed live interactive analytics dashboard on GitHub Pages showing
-  community area performance, hourly demand, and revenue trends.
-```
-
-
----
-
 ## 📋 Requirements
-
 ```
 pandas
 boto3
@@ -344,19 +246,9 @@ apache-airflow
 requests
 ```
 
----
-
-## 📄 License
-
-MIT License
-
----
-
 ## 👤 Author
 
 **Sujith** — Data Engineer
-> 🌐 [Live Dashboard](https://sujithsa1.github.io/chicago-rideshare-pipeline/) · 💼 LinkedIn · 🐙 GitHub
-
----
+> 🌐 [Live Dashboard](https://sujithsa1.github.io/chicago-rideshare-pipeline/) · 🐙 GitHub
 
 > ⭐ Star this repo if it helped you!
